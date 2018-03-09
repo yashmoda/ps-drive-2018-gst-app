@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/yashmoda/ps-drive-2018-gst-app#readme",
   "dependencies": {
-    "hapi": "^17.2.2"
+    "hapi": "^17.2.2",
+    "request": "^2.83.0",
+    "res": "^0.4.0"
   }
 }
