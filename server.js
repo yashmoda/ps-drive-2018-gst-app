@@ -21,10 +21,12 @@ connection.connect();
 // Start the server
 async function start() {
 
-    try {
+    try 
+    {
         await server.start();
     }
-    catch (err) {
+    catch (err) 
+    {
         console.log(err);
         process.exit(1);
     }
@@ -34,6 +36,7 @@ async function start() {
 
 start();
 
+// add a product
 server.route({
     method: 'POST',
     path: '/add_product',
@@ -52,7 +55,7 @@ server.route({
     }
 });
 
-
+//get a product.
 server.route({
     method: 'GET',
     path: '/show_product/{product_code}',
@@ -69,10 +72,12 @@ server.route({
                 console.log(results);
                 return(results);
             });
+        console.log("Product data shown.");
         return("Product data shown.");
     }
 });
 
+//edit a product.
 server.route({
     method: 'POST',
     path: '/edit_product',
@@ -93,6 +98,51 @@ server.route({
                 console.log(results);
                 return(results);
             });
+        console.log("Product edited successfully.");
         return("Product edited successfully");
     }
 });
+
+//Delete a product.
+server.route({
+    method: 'GET',
+    path: '/delete_product/{product_code}',
+    handler: function(request, reply)
+    {
+        const product_code = request.params.product_code;
+        var query = 'delete from products where product_code ="'+ product_code + '"';
+        connection.query(query, function(error, results, fields)
+        {
+            if(error)
+            {
+                throw error;
+            }
+            console.log(results);
+            return(results);
+        });
+        console.log("Product deleted.");
+        return("Product deleted.")
+    }
+});
+
+//show all products
+server.route({
+    method: 'GET',
+    path: '/show_all_products/',
+    handler: function(request, reply)
+    {
+        var query = 'select * from products';
+        connection.query(query, function(error, results, fields)
+        {
+            if(error)
+            {
+                throw error;
+            }
+            console.log(results);
+            return(results);
+        });
+        console.log("Showed all products.");
+        return("Showed all products.")
+    }
+});
+

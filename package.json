@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/yashmoda/ps-drive-2018-gst-app#readme",
   "dependencies": {
+    "@angular/animations": "^5.2.8",
     "hapi": "^17.2.2",
+    "primeng": "^5.2.3",
     "request": "^2.83.0",
     "res": "^0.4.0"
   }
