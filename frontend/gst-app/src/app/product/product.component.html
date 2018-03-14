@@ -1,0 +1,41 @@
+<header>
+  <div class="container-fluid" style="background-color:#2c2c2c;">
+    <b class="row" align="center" style="color:#da3730;font-size:40px;text-align: center;padding:40px;">GST Billing App</b>
+  </div>
+</header>
+<div class="row">
+    <div class="ui-g-12 col-sm-4 col-md-4 col-xs-12" style="margin-top:10px">
+        <div style="background-color:#008080;padding:20px">
+            <div class="col-lg-12 col-md-12" style="padding:5px 0px 5px 20px">
+                <b style="font-size:20px;color:white">Product Details</b>
+            </div>
+            <div class="form-group col-lg-12 col-md-12" style="padding:20px">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-info"> </i></span>
+                    <input id="product_code" class="form-control " type="text" style="width:100%" pInputText placeholder="Product Code" [(ngModel)]="product_code" required>         
+                </div>
+            </div>
+            <div class="form-group col-lg-12 col-md-12" style="padding:20px">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-tags"></i></span>
+                    <input id="product_name" class="form-control " type="text" style="width:100%" pInputText placeholder="Product Name" [(ngModel)]="product_name" required>         
+                </div>
+            </div>
+            <div class="form-group col-lg-12 col-md-12" style="padding:20px">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><b>₹</b></span>
+                    <input id="product_price" class="form-control " type="number" style="width:100%" pInputText placeholder="Product Price" [(ngModel)]="product_price" required>    
+                    <span class="ui-inputgroup-addon">.00</span>     
+                </div>
+            </div>
+            <div class="form-group col-lg-12 col-md-12" style="padding:20px">
+                <div class="ui-inputgroup">
+                    <span class="ui-inputgroup-addon"><i class="fa fa-percent"></i></span>
+                    <input id="product_gst" class="form-control " type="number" style="width:100%" pInputText placeholder="Product GST Percentage" [(ngModel)]="product_gst" required>         
+                </div>
+            </div>
+            <br>
+            <button pButton type="button" (click)="addproduct()" label="Click"></button>
+        </div>
+    </div>
+</div>
